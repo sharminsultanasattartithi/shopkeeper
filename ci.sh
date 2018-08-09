@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "v1.0.0 released"
+git commit -m "v1.1 released: browse & upload image"
 
 ############
 # Step: 05 #
