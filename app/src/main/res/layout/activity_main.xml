@@ -10,9 +10,8 @@
         android:id="@+id/btnBrowseImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/btnUploadImage"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/btnUploadImage"
         android:onClick="onClickBrowseImage"
         android:text="Browse Image" />
 
@@ -25,6 +24,7 @@
         android:layout_centerVertical="true"/>
 
     <EditText
+        android:layout_margin="10dp"
         android:id="@+id/etProductName"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/ivProduct"
@@ -33,11 +33,21 @@
         android:hint="Enter product name"/>
 
     <Button
+        android:layout_margin="10dp"
         android:onClick="onClickUploadImage"
         android:id="@+id/btnUploadImage"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload image"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:onClick="onClickShowProducts"
+        android:id="@+id/btnShowProducts"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show products"/>
 </RelativeLayout>

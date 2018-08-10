@@ -14,7 +14,6 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,7 +28,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import producttracker.playlagom.shopkeeper.storage.UploadImage;
+import producttracker.playlagom.shopkeeper.storage.Product;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -109,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(), "Image uploaded", Toast.LENGTH_SHORT).show();
 
-                    UploadImage uploadImage = new UploadImage(etProductName.getText().toString(), taskSnapshot.getDownloadUrl().toString());
+                    Product product = new Product(etProductName.getText().toString(), taskSnapshot.getDownloadUrl().toString());
                     String uploadUrl = databaseReference.push().getKey();
-                    databaseReference.child(uploadUrl).setValue(uploadImage);
+                    databaseReference.child(uploadUrl).setValue(product);
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -131,5 +130,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(), "Please select a image", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onClickShowProducts(View view) {
+        Toast.makeText(getApplicationContext(), "Available products", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, ProductListActivity.class));
     }
 }
