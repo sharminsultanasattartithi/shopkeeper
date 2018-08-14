@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "134339377563",
+    "firebase_url": "https://testserver-pt.firebaseio.com",
+    "project_id": "testserver-pt",
+    "storage_bucket": "testserver-pt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134339377563:android:7a9c362d11fc45ac",
+        "android_client_info": {
+          "package_name": "testserver.playlagom.producttracker.shopkeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134339377563-lusgvkfvpp2ih2aj6ei2r9rtuj75em5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL71u0Rtz1eGyb7KqoH2OpfJd9jsUnLPE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
