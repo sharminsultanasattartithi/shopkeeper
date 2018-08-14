@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "google-services.json updated"
+git commit -m "RELEASED v1.4.0: app icon added"
 
 ############
 # Step: 05 #
