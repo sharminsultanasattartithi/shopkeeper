@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "Test server configured"
+git commit -m "google-services.json updated"
 
 ############
 # Step: 05 #

@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:134339377563:android:4b3525ece483bd44",
+        "mobilesdk_app_id": "1:134339377563:android:7a9c362d11fc45ac",
         "android_client_info": {
-          "package_name": "test.producttracker.playlagom.shopkeeper"
+          "package_name": "testserver.playlagom.producttracker.shopkeeper"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "134339377563-d5h5jst7l2tmhgv838paarb4utuv2n70.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "test.producttracker.playlagom.shopkeeper",
-            "certificate_hash": "9ed24a35a6c2b97846cd01b1e53741dd1d13b502"
-          }
-        },
         {
           "client_id": "134339377563-lusgvkfvpp2ih2aj6ei2r9rtuj75em5g.apps.googleusercontent.com",
           "client_type": 3
@@ -29,7 +21,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB1NFLfjqCzyrq03XsHY9JgHr28MBzfaPc"
+          "current_key": "AIzaSyAL71u0Rtz1eGyb7KqoH2OpfJd9jsUnLPE"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "134339377563-lusgvkfvpp2ih2aj6ei2r9rtuj75em5g.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
