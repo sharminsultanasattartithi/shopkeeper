@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "producttracker.playlagom.shopkeeper"
+        applicationId "test.producttracker.playlagom.shopkeeper"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 12

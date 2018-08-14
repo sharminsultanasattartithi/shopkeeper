@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "screenshots added"
+git commit -m "Test server configured"
 
 ############
 # Step: 05 #
