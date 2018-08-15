@@ -6,8 +6,8 @@ android {
         applicationId "testserver.playlagom.producttracker.shopkeeper"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 14
-        versionName "1.4"
+        versionCode 15
+        versionName "1.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -34,5 +34,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
 
 apply plugin: 'com.google.gms.google-services'

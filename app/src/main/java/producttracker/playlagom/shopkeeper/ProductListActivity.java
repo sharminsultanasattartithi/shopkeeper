@@ -47,6 +47,7 @@ public class ProductListActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
                     // Need default constructor
                     Product product = snapshot.getValue(Product.class);
+                    product.setNodeKey(snapshot.getKey());
                     productList.add(product);
                 }
 
@@ -60,5 +61,11 @@ public class ProductListActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

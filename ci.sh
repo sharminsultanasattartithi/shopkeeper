@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "Track changes of google-services.json"
+git commit -m "v1.5.0 released: edit photo, text"
 
 ############
 # Step: 05 #

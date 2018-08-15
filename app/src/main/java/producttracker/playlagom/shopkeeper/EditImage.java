@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -30,38 +31,61 @@ import java.io.IOException;
 
 import producttracker.playlagom.shopkeeper.storage.Product;
 
-public class MainActivity extends AppCompatActivity {
+public class EditImage extends AppCompatActivity {
 
+    private static final String TAG = "EditImage";
+    Uri imgUri;
+    String nodeKey;
+    String imgURLKey;
+    // widgets
+    ImageView ivProduct;
+    EditText etProductName;
+    Button btnEditImage, btnUploadImage;
+    
+    // firebase
     StorageReference storageReference;
     DatabaseReference databaseReference;
-
-    Button btnBrowseImage, btnUploadImage;
-    EditText etProductName;
-    ImageView ivProduct;
-
-    Uri imgUri;
-
+    
+    // path
+    public static final int REQUEST_CODE = 1234;
     public static final String FB_STORAGE_PATH = "image/";
     public static final String FB_DATABASE_PATH = "image";
-    public static final int REQUEST_CODE = 1234;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_edit_image);
+
+        // RECEIVE obj
+        // Serializable solution
+        // Product product = (Product) getIntent().getSerializableExtra("Product");
+        // Toast.makeText(getApplicationContext(), "" + product.getName(), Toast.LENGTH_SHORT).show();
+
+        // Intent solution
+        Bundle bundle = getIntent().getExtras();
+        nodeKey = bundle.getString("nodeKey");
+        imgURLKey = bundle.getString("imgURLKey");
+        String productName = bundle.getString("productName");
+
+        // debug
+//        Toast.makeText(getApplicationContext(), "name: " + productName +
+//                ", node: " + nodeKey + ", url: " + imgURLKey, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Edit product name or image", Toast.LENGTH_LONG).show();
 
         // INIT firebase
         storageReference = FirebaseStorage.getInstance().getReference(FB_STORAGE_PATH);
         databaseReference = FirebaseDatabase.getInstance().getReference(FB_DATABASE_PATH);
 
         // WIRE widgets or Init/Connect xml components with Java
-        btnBrowseImage = findViewById(R.id.btnBrowseImage);
+        btnEditImage = findViewById(R.id.btnEditImage);
         btnUploadImage = findViewById(R.id.btnUploadImage);
         etProductName = findViewById(R.id.etProductName);
         ivProduct = findViewById(R.id.ivProduct);
+
+        etProductName.setText(productName);
     }
 
-    public void onClickBrowseImage(View view) {
+    public void onClickEditImage(View view) {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -97,6 +121,25 @@ public class MainActivity extends AppCompatActivity {
             progressDialog.setTitle("Uploading image...");
             progressDialog.show();
 
+            // Create a storage reference from our app
+            StorageReference photoRef = FirebaseStorage.getInstance().getReferenceFromUrl(imgURLKey);
+
+            photoRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    // File deleted successfully
+                    Toast.makeText(getApplicationContext(), "Deleted prev image", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onSuccess: deleted file");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Uh-oh, an error occurred!
+                    Toast.makeText(getApplicationContext(), "FAILED to delete prev image", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onFailure: did not delete file");
+                }
+            });
+
             // GET storage ref
             StorageReference reference = storageReference
                     .child(FB_STORAGE_PATH + System.currentTimeMillis() + "." + getImageExt(imgUri));
@@ -109,8 +152,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Image uploaded", Toast.LENGTH_SHORT).show();
 
                     Product product = new Product(etProductName.getText().toString(), taskSnapshot.getDownloadUrl().toString());
-                    String uploadUrl = databaseReference.push().getKey();
-                    databaseReference.child(uploadUrl).setValue(product);
+                    databaseReference.child(nodeKey).setValue(product);
+
+                    Toast.makeText(getApplicationContext(), "Updated products", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(new Intent(EditImage.this, ProductListActivity.class));
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
@@ -128,12 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         } else {
-            Toast.makeText(getApplicationContext(), "Please select a image", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Please select new image", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void onClickShowProducts(View view) {
-        Toast.makeText(getApplicationContext(), "Available products", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(MainActivity.this, ProductListActivity.class));
     }
 }

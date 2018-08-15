@@ -1,13 +1,16 @@
 package producttracker.playlagom.shopkeeper.storage;
 
+import java.io.Serializable;
+
 /**
  * Created by User on 8/9/2018.
  */
 
-public class Product {
+public class Product implements Serializable{
 
     String name;
     String url;
+    private String nodeKey;
 
     public Product() {
 
@@ -32,5 +35,13 @@ public class Product {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public void setNodeKey(String nodeKey) {
+        this.nodeKey = nodeKey;
+    }
+
+    public String getNodeKey() {
+        return nodeKey;
     }
 }
