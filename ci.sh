@@ -69,7 +69,7 @@ echo
 ## UPLOAD v1.7.0 updates, RENAME todo.md to ideas.md
 ## UPLOAD: current location detection + moveCamera
 
-git commit -m "Upload stable changes"
+git commit -m "Release candidate v1.7.0"
 
 ############
 # Step: 05 #

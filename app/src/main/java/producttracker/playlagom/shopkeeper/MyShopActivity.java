@@ -48,7 +48,7 @@ public class MyShopActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_myshop);
 
         // INIT firebase
         storageReference = FirebaseStorage.getInstance().getReference(FB_STORAGE_PATH);
