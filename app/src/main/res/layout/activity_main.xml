@@ -6,14 +6,30 @@
     android:layout_height="match_parent"
     tools:context="producttracker.playlagom.shopkeeper.MainActivity">
 
-    <Button
-        android:id="@+id/btnBrowseImage"
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_margin="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:onClick="onClickBrowseImage"
-        android:text="Browse Image" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/tvInstruction"
+            android:layout_toLeftOf="@+id/btnBrowseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_instruction" />
+
+        <Button
+            android:id="@+id/btnBrowseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:onClick="onClickBrowseImage"
+            android:text="Add Image" />
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/ivProduct"

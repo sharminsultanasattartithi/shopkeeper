@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "RELEASED v1.4.0: app icon added"
+git commit -m "v1.6.0 released: ux improved"
 
 ############
 # Step: 05 #
