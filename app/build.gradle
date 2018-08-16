@@ -6,8 +6,8 @@ android {
         applicationId "testserver.playlagom.producttracker.shopkeeper"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 15
-        versionName "1.5"
+        versionCode 16
+        versionName "1.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

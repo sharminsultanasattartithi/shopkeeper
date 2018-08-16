@@ -64,7 +64,7 @@ echo
 ## Solved issues
 ## Default: Commit skipped|forgotten
 
-git commit -m "v1.5.0 released: edit photo, text"
+git commit -m "v1.6.0 released: ux improved"
 
 ############
 # Step: 05 #
