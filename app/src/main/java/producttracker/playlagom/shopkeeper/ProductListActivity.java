@@ -37,7 +37,7 @@ public class ProductListActivity extends AppCompatActivity {
         progressDialog.setMessage("Please wait, loading images...");
         progressDialog.show();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference(MainActivity.FB_DATABASE_PATH);
+        databaseReference = FirebaseDatabase.getInstance().getReference(MyShopActivity.FB_DATABASE_PATH);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

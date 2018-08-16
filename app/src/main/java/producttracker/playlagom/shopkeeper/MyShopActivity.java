@@ -30,7 +30,7 @@ import java.io.IOException;
 
 import producttracker.playlagom.shopkeeper.storage.Product;
 
-public class MainActivity extends AppCompatActivity {
+public class MyShopActivity extends AppCompatActivity {
 
     StorageReference storageReference;
     DatabaseReference databaseReference;
@@ -134,6 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickShowProducts(View view) {
         Toast.makeText(getApplicationContext(), "Available products", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(MainActivity.this, ProductListActivity.class));
+        startActivity(new Intent(MyShopActivity.this, ProductListActivity.class));
     }
 }
