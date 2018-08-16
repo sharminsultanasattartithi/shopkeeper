@@ -25,8 +25,8 @@
 
 echo
 echo [ Done ]  Initializing who am I.
-git config --global user.email "sakib.rahman.0000@gmail.com"
-git config --global user.name "sakib-rahman-bangladesh"
+git config --global user.email "sk375478771@gmail.com"
+git config --global user.name "Tanvir-Aunjum-Sunny"
 
 
 ############
@@ -63,8 +63,13 @@ echo
 ## Release v1.5.0
 ## Solved issues
 ## Default: Commit skipped|forgotten
+## ðŸ“— cr2018.Mar14.1.7.0
 
-git commit -m "v1.6.0 released: ux improved"
+# 2018.Apr26
+## UPLOAD v1.7.0 updates, RENAME todo.md to ideas.md
+## UPLOAD: current location detection + moveCamera
+
+git commit -m "Release candidate v1.7.0"
 
 ############
 # Step: 05 #
@@ -84,9 +89,7 @@ git remote -v
 # Change your remote's URL from SSH to HTTPS with the git remote set-url command.
 echo
 echo [ Done ]  Updating remote URL.
-
-git remote set-url origin https://github.com/sakib-rahman-bangladesh/shopkeeper
-
+git remote set-url origin https://github.com/Tanvir-Aunjum-Sunny/shopkeeper
 ############
 # Step: 07 #
 ############
@@ -96,6 +99,7 @@ echo [ Done ]  Verifying remote URL.
 echo
 git remote -v
 
+
 ############
 # Step: 08 #
 ############
@@ -104,4 +108,4 @@ echo
 echo 08. Pushing local codebase to remote repo...Repo-to-repo collaboration: git push
 echo
 git push origin master
-git push --all -f https://github.com/sakib-rahman-bangladesh/shopkeeper
+git push --all -f https://github.com/Tanvir-Aunjum-Sunny/shopkeeper

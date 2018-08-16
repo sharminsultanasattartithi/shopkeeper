@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="producttracker.playlagom.shopkeeper.MyShopActivity">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/tvInstruction"
+            android:layout_toLeftOf="@+id/btnBrowseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_instruction" />
+
+        <Button
+            android:id="@+id/btnBrowseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:onClick="onClickBrowseImage"
+            android:text="Add Image" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <EditText
+        android:layout_margin="10dp"
+        android:id="@+id/etProductName"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ivProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter product name"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:onClick="onClickUploadImage"
+        android:id="@+id/btnUploadImage"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload image"/>
+
+    <Button
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:onClick="onClickShowProducts"
+        android:id="@+id/btnShowProducts"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show products"/>
+</RelativeLayout>

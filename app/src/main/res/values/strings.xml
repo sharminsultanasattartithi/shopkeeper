@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Shop</string>
     <string name="tv_instruction">Add photos of your item from your mobile device to share it with millions of users or nearby users.</string>
+    <string name="shopkeeper">shopkeeper</string>
 </resources>
